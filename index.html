@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Property Form</title>
+    <link rel="stylesheet" type="text/css" href="C:\Users\Julius\Desktop\Real Estate\property_form_with_pdf_download\style.css">
+    <script src="C:\Users\Julius\Desktop\Real Estate\property_form_with_pdf_download\script.js"></script>
+</head>
+<body>
+
+<h1>Real Estate Property Listing Form</h1>
+
+<div class="form-container">
+    <form id="propertyForm">
+        <label for="title">Property Title:</label>
+        <input type="text" id="title" name="title" required>
+
+        <label for="price">Listing Price ($):</label>
+        <input type="number" id="price" name="price" required>
+
+        <label for="address">Property Address:</label>
+        <input type="text" id="address" name="address" required>
+
+        <label for="yearBuilt">Year Built:</label>
+        <input type="number" id="yearBuilt" name="yearBuilt" required>
+
+        <label for="lotSize">Lot Size (sq ft):</label>
+        <input type="number" id="lotSize" name="lotSize" required>
+
+        <label for="squareFootage">Square Footage (sq ft):</label>
+        <input type="number" id="squareFootage" name="squareFootage" required>
+
+        <label for="bedrooms">Number of Bedrooms:</label>
+        <input type="number" id="bedrooms" name="bedrooms" required>
+
+        <label for="bathrooms">Number of Bathrooms:</label>
+        <input type="number" id="bathrooms" name="bathrooms" required>
+
+        <label for="flooring">Flooring Type:</label>
+        <input type="text" id="flooring" name="flooring">
+
+        <label for="appliances">Appliances Included:</label>
+        <input type="text" id="appliances" name="appliances">
+
+        <label for="pool">Pool/Hot Tub:</label>
+        <select id="pool" name="pool">
+            <option value="None">None</option>
+            <option value="Pool">Pool</option>
+            <option value="Hot Tub">Hot Tub</option>
+            <option value="Both">Both</option>
+        </select>
+
+        <label for="hoa">HOA Fees (per month):</label>
+        <input type="number" id="hoa" name="hoa">
+
+        <label for="description">Property Description:</label>
+        <textarea id="description" name="description" rows="4" required></textarea>
+
+        <button type="button" onclick="displayResults()">Submit</button>
+    </form>
+</div>
+
+<div id="results" style="display:none;">
+    <h2>Property Details</h2>
+    <p><strong>Property Title:</strong> <span id="resultTitle"></span></p>
+    <p><strong>Listing Price:</strong> $<span id="resultPrice"></span></p>
+    <p><strong>Address:</strong> <span id="resultAddress"></span></p>
+    <p><strong>Year Built:</strong> <span id="resultYearBuilt"></span></p>
+    <p><strong>Lot Size:</strong> <span id="resultLotSize"></span> sq ft</p>
+    <p><strong>Square Footage:</strong> <span id="resultSquareFootage"></span> sq ft</p>
+    <p><strong>Bedrooms:</strong> <span id="resultBedrooms"></span></p>
+    <p><strong>Bathrooms:</strong> <span id="resultBathrooms"></span></p>
+    <p><strong>Flooring:</strong> <span id="resultFlooring"></span></p>
+    <p><strong>Appliances:</strong> <span id="resultAppliances"></span></p>
+    <p><strong>Pool/Hot Tub:</strong> <span id="resultPool"></span></p>
+    <p><strong>HOA Fees:</strong> $<span id="resultHOA"></span></p>
+    <p><strong>Description:</strong> <span id="resultDescription"></span></p>
+
+    <button id="downloadBtn" onclick="generatePDF()">Download PDF</button>
+</div>
+
+<!-- Include jsPDF library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+</body>
+</html>
